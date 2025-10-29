@@ -1,0 +1,29 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ef5350;
+  padding: .5rem 1rem;
+  border-bottom: 2px solid #c62828;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar .logo img { height: 50px; }
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.navbar a:hover { text-decoration: underline; color: #ffe082; }
+.navbar a.active { text-decoration: underline; }

@@ -3,41 +3,37 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>PokeApp - Inicio</title>
+  <title>PokeApp - Inici</title>
   <meta name="description" content="PokeApp: PokeDex i Pokedle">
   <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="/styles/header.css">
   <script src="js/header.js" defer></script>
 </head>
 
 <body>
 
-  <div id="site-header">
+  <div id="topbar">
     <!-- Aquí se cargará el header desde header.html -->
   </div>
 
-  <main>
-    <h1>PokeApp</h1>
-    <p>Projecte Enginyeria Llocs Web</p>
-
+  <main class="container">
     <section>
-      <h2>Benvingut a PokeApp!</h2>
+      <h1>PokeApp</h1>
+      <p>Projecte Enginyeria Llocs Web</p>
+      <h3>Benvingut a PokeApp!</h3>
       <p>Explora el món dels Pokémon amb la nostra PokeDex interactiva i desafia't amb el nostre joc Pokedle.</p>
+    
+      <h3>Opcions a Escollir</h3>
+      <div class="buttons">
+        <a href="#" id="btnPokedex" class="btn btn-red">📘 Obrir Pokédex</a>
+          <a href="#" id="btnPokedle" class="btn btn-red">🎯 Jugar a Pokedle</a>
+      </div>
+
+
+
+
     </section>
-
-    <section>
-      <h2>Opcions a Escollir</h2>
-      <ul>
-        <li><a href="/pokedex.html">Accedeix a la PokeDex</a></li>
-        <li><a href="/pokedle.html">Juga a Pokedle</a></li>
-      </ul>
-    </section>
-
-
-
   </main>
-
-
-
+  <script src="js/index.js" defer></script>
 </body>
-
 </html>

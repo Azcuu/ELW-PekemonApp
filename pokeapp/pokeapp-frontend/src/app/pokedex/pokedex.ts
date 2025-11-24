@@ -1,27 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { PokeappService } from '../pokeapp-service';
+import { Router } from '@angular/router';
+import { Pokemon } from '../models/pokemon.model';
 import { CommonModule, TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-pokedex',
-  imports: [
-    TitleCasePipe,
-    CommonModule
-  ],
+  imports: [CommonModule, TitleCasePipe],
   templateUrl: './pokedex.html',
   styleUrl: './pokedex.css',
 })
 export class Pokedex {
 
-  pokemons: any[] = [];
-  loading: boolean = true;
+  private pokeappService = inject(PokeappService);
+  private router = inject(Router);
 
-  constructor(private pokeappService: PokeappService) {}
+  pokemons = signal<Pokemon[]>([]);
+  loading = signal(true);
 
-  ngOnInit(): void {
-    this.pokeappService.getPokemons().subscribe(data => {
-      this.pokemons = data.results;
-      this.loading = false;
-    });
+
+  constructor() {
+    this.pokeappService.loadallPokemons();
+    this.pokemons.set(this.pokeappService.pokemons());
+    this.loading.set(false);
+  }
+
+  goToDetail(index: number) {
+    this.router.navigate(['/pokemon', index + 1]);
   }
 }

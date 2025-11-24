@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PokeappService } from './pokeapp-service';
+import { Pokedle } from './pokedle';
 
-describe('PokeappService', () => {
-  let component: PokeappService;
-  let fixture: ComponentFixture<PokeappService>;
+describe('Pokedle', () => {
+  let component: Pokedle;
+  let fixture: ComponentFixture<Pokedle>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PokeappService]
+      imports: [Pokedle]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PokeappService);
+    fixture = TestBed.createComponent(Pokedle);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

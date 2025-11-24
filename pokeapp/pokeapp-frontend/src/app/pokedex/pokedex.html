@@ -1,9 +1,12 @@
 <h1>Pokedex</h1>
 
-<div *ngIf="loading">Cargando...</div>
+<div *ngIf="loading()">
+  Cargando pokemons...
+</div>
 
-<div class="pokedex-grid" *ngIf="!loading">
-  <div class="pokemon-card" *ngFor="let p of pokemons; let i = index">
+<div class="pokedex-grid" *ngIf="!loading()">
+  <div class="pokemon-card" *ngFor="let p of pokemons(); let i = index" (click)="goToDetail(i)">
+    <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + (i+1) + '.png'" [alt]="p.name">
     <p>{{ p.name | titlecase }}</p>
   </div>
 </div>

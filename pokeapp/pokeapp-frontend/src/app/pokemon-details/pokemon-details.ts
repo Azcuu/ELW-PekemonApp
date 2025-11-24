@@ -1,27 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokeappService } from '../pokeapp-service';
-import { CommonModule } from '@angular/common';
+import { Pokemon } from '../models/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-details',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './pokemon-details.html',
   styleUrl: './pokemon-details.css',
 })
 
-export class PokemonDetails implements OnInit {
+export class PokemonDetails {
 
-  pokemon: any;
-  loading = true;
+  private route: ActivatedRoute = inject(ActivatedRoute);
+  private pokeappService = inject(PokeappService)
 
-  constructor(private route: ActivatedRoute, private pokeappService: PokeappService) {}
+  private pokemonId: string;
 
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    this.pokeappService.getPokemon(id).subscribe(data => {
-      this.pokemon = data;
-      this.loading = false;
+  pokemon = signal<Pokemon | null>(null);
+
+  constructor() {
+
+    this.pokemonId = this.route.snapshot.params['pokemonId'];
+
+    this.pokeappService.getPokemonById(this.pokemonId).subscribe(pokemon => {
+      this.pokemon.set(pokemon);
     });
   }
 }

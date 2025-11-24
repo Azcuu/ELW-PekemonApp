@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PokeappService } from './pokeapp-service';
+import { Teams } from './teams';
 
-describe('PokeappService', () => {
-  let component: PokeappService;
-  let fixture: ComponentFixture<PokeappService>;
+describe('Teams', () => {
+  let component: Teams;
+  let fixture: ComponentFixture<Teams>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PokeappService]
+      imports: [Teams]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PokeappService);
+    fixture = TestBed.createComponent(Teams);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

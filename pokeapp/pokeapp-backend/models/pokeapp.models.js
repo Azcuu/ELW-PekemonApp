@@ -6,251 +6,155 @@ export function getDBPokemonById(id) {
     return pokemons.find(pokemon => pokemon.id === id);
 }
 
-export function addDBPokemon(pokemon) {
-    pokemons.push(pokemon);
-    return pokemon;
-}
-
-const pokemons = [{
-    "count": 1328,
-    "next": null,
-    "previous": null,
-    "results": [
-        {
-            "name": "bulbasaur",
-            "url": "https://pokeapi.co/api/v2/pokemon/1/"
-        },
-        {
-            "name": "ivysaur",
-            "url": "https://pokeapi.co/api/v2/pokemon/2/"
-        },
-        {
-            "name": "venusaur",
-            "url": "https://pokeapi.co/api/v2/pokemon/3/"
-        },
-        {
-            "name": "charmander",
-            "url": "https://pokeapi.co/api/v2/pokemon/4/"
-        },
-        {
-            "name": "charmeleon",
-            "url": "https://pokeapi.co/api/v2/pokemon/5/"
-        },
-        {
-            "name": "charizard",
-            "url": "https://pokeapi.co/api/v2/pokemon/6/"
-        },
-        {
-            "name": "squirtle",
-            "url": "https://pokeapi.co/api/v2/pokemon/7/"
-        },
-        {
-            "name": "wartortle",
-            "url": "https://pokeapi.co/api/v2/pokemon/8/"
-        },
-        {
-            "name": "blastoise",
-            "url": "https://pokeapi.co/api/v2/pokemon/9/"
-        },
-        {
-            "name": "caterpie",
-            "url": "https://pokeapi.co/api/v2/pokemon/10/"
-        },
-        {
-            "name": "metapod",
-            "url": "https://pokeapi.co/api/v2/pokemon/11/"
-        },
-        {
-            "name": "butterfree",
-            "url": "https://pokeapi.co/api/v2/pokemon/12/"
-        },
-        {
-            "name": "weedle",
-            "url": "https://pokeapi.co/api/v2/pokemon/13/"
-        },
-        {
-            "name": "kakuna",
-            "url": "https://pokeapi.co/api/v2/pokemon/14/"
-        },
-        {
-            "name": "beedrill",
-            "url": "https://pokeapi.co/api/v2/pokemon/15/"
-        },
-        {
-            "name": "pidgey",
-            "url": "https://pokeapi.co/api/v2/pokemon/16/"
-        },
-        {
-            "name": "pidgeotto",
-            "url": "https://pokeapi.co/api/v2/pokemon/17/"
-        },
-        {
-            "name": "pidgeot",
-            "url": "https://pokeapi.co/api/v2/pokemon/18/"
-        },
-        {
-            "name": "rattata",
-            "url": "https://pokeapi.co/api/v2/pokemon/19/"
-        },
-        {
-            "name": "raticate",
-            "url": "https://pokeapi.co/api/v2/pokemon/20/"
-        },
-        {
-            "name": "spearow",
-            "url": "https://pokeapi.co/api/v2/pokemon/21/"
-        },
-        {
-            "name": "fearow",
-            "url": "https://pokeapi.co/api/v2/pokemon/22/"
-        },
-        {
-            "name": "ekans",
-            "url": "https://pokeapi.co/api/v2/pokemon/23/"
-        },
-        {
-            "name": "arbok",
-            "url": "https://pokeapi.co/api/v2/pokemon/24/"
-        },
-        {
-            "name": "pikachu",
-            "url": "https://pokeapi.co/api/v2/pokemon/25/"
-        },
-        {
-            "name": "raichu",
-            "url": "https://pokeapi.co/api/v2/pokemon/26/"
-        },
-        {
-            "name": "sandshrew",
-            "url": "https://pokeapi.co/api/v2/pokemon/27/"
-        },
-        {
-            "name": "sandslash",
-            "url": "https://pokeapi.co/api/v2/pokemon/28/"
-        },
-        {
-            "name": "nidoran-f",
-            "url": "https://pokeapi.co/api/v2/pokemon/29/"
-        },
-        {
-            "name": "nidorina",
-            "url": "https://pokeapi.co/api/v2/pokemon/30/"
-        },
-        {
-            "name": "nidoqueen",
-            "url": "https://pokeapi.co/api/v2/pokemon/31/"
-        },
-        {
-            "name": "nidoran-m",
-            "url": "https://pokeapi.co/api/v2/pokemon/32/"
-        },
-        {
-            "name": "nidorino",
-            "url": "https://pokeapi.co/api/v2/pokemon/33/"
-        },
-        {
-            "name": "nidoking",
-            "url": "https://pokeapi.co/api/v2/pokemon/34/"
-        },
-        {
-            "name": "clefairy",
-            "url": "https://pokeapi.co/api/v2/pokemon/35/"
-        },
-        {
-            "name": "clefable",
-            "url": "https://pokeapi.co/api/v2/pokemon/36/"
-        },
-        {
-            "name": "vulpix",
-            "url": "https://pokeapi.co/api/v2/pokemon/37/"
-        },
-        {
-            "name": "ninetales",
-            "url": "https://pokeapi.co/api/v2/pokemon/38/"
-        },
-        {
-            "name": "jigglypuff",
-            "url": "https://pokeapi.co/api/v2/pokemon/39/"
-        },
-        {
-            "name": "wigglytuff",
-            "url": "https://pokeapi.co/api/v2/pokemon/40/"
-        },
-        {
-            "name": "zubat",
-            "url": "https://pokeapi.co/api/v2/pokemon/41/"
-        },
-        {
-            "name": "golbat",
-            "url": "https://pokeapi.co/api/v2/pokemon/42/"
-        },
-        {
-            "name": "oddish",
-            "url": "https://pokeapi.co/api/v2/pokemon/43/"
-        },
-        {
-            "name": "gloom",
-            "url": "https://pokeapi.co/api/v2/pokemon/44/"
-        },
-        {
-            "name": "vileplume",
-            "url": "https://pokeapi.co/api/v2/pokemon/45/"
-        },
-        {
-            "name": "paras",
-            "url": "https://pokeapi.co/api/v2/pokemon/46/"
-        },
-        {
-            "name": "parasect",
-            "url": "https://pokeapi.co/api/v2/pokemon/47/"
-        },
-        {
-            "name": "venonat",
-            "url": "https://pokeapi.co/api/v2/pokemon/48/"
-        },
-        {
-            "name": "venomoth",
-            "url": "https://pokeapi.co/api/v2/pokemon/49/"
-        },
-        {
-            "name": "diglett",
-            "url": "https://pokeapi.co/api/v2/pokemon/50/"
-        },
-        {
-            "name": "dugtrio",
-            "url": "https://pokeapi.co/api/v2/pokemon/51/"
-        },
-        {
-            "name": "meowth",
-            "url": "https://pokeapi.co/api/v2/pokemon/52/"
-        },
-        {
-            "name": "persian",
-            "url": "https://pokeapi.co/api/v2/pokemon/53/"
-        },
-        {
-            "name": "psyduck",
-            "url": "https://pokeapi.co/api/v2/pokemon/54/"
-        },
-        {
-            "name": "golduck",
-            "url": "https://pokeapi.co/api/v2/pokemon/55/"
-        },
-        {
-            "name": "mankey",
-            "url": "https://pokeapi.co/api/v2/pokemon/56/"
-        },
-        {
-            "name": "primeape",
-            "url": "https://pokeapi.co/api/v2/pokemon/57/"
-        },
-        {
-            "name": "growlithe",
-            "url": "https://pokeapi.co/api/v2/pokemon/58/"
-        },
-        {
-            "name": "arcanine",
-            "url": "https://pokeapi.co/api/v2/pokemon/59/"
-        }
+const pokemons =[
+  {
+    "id": 1,
+    "name": "bulbasaur",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "types": ["grass", "poison"],
+    "abilities": ["overgrow", "chlorophyll"],
+    "stats": [
+      {"name": "hp", "value": 45},
+      {"name": "attack", "value": 49},
+      {"name": "defense", "value": 49},
+      {"name": "special-attack", "value": 65},
+      {"name": "special-defense", "value": 65},
+      {"name": "speed", "value": 45}
     ]
-}];
+  },
+  {
+    "id": 2,
+    "name": "ivysaur",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+    "types": ["grass", "poison"],
+    "abilities": ["overgrow", "chlorophyll"],
+    "stats": [
+      {"name": "hp", "value": 60},
+      {"name": "attack", "value": 62},
+      {"name": "defense", "value": 63},
+      {"name": "special-attack", "value": 80},
+      {"name": "special-defense", "value": 80},
+      {"name": "speed", "value": 60}
+    ]
+  },
+  {
+    "id": 3,
+    "name": "venusaur",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "types": ["grass", "poison"],
+    "abilities": ["overgrow", "chlorophyll"],
+    "stats": [
+      {"name": "hp", "value": 80},
+      {"name": "attack", "value": 82},
+      {"name": "defense", "value": 83},
+      {"name": "special-attack", "value": 100},
+      {"name": "special-defense", "value": 100},
+      {"name": "speed", "value": 80}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "charmander",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+    "types": ["fire"],
+    "abilities": ["blaze", "solar-power"],
+    "stats": [
+      {"name": "hp", "value": 39},
+      {"name": "attack", "value": 52},
+      {"name": "defense", "value": 43},
+      {"name": "special-attack", "value": 60},
+      {"name": "special-defense", "value": 50},
+      {"name": "speed", "value": 65}
+    ]
+  },
+  {
+    "id": 5,
+    "name": "charmeleon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+    "types": ["fire"],
+    "abilities": ["blaze", "solar-power"],
+    "stats": [
+      {"name": "hp", "value": 58},
+      {"name": "attack", "value": 64},
+      {"name": "defense", "value": 58},
+      {"name": "special-attack", "value": 80},
+      {"name": "special-defense", "value": 65},
+      {"name": "speed", "value": 80}
+    ]
+  },
+  {
+    "id": 6,
+    "name": "charizard",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+    "types": ["fire", "flying"],
+    "abilities": ["blaze", "solar-power"],
+    "stats": [
+      {"name": "hp", "value": 78},
+      {"name": "attack", "value": 84},
+      {"name": "defense", "value": 78},
+      {"name": "special-attack", "value": 109},
+      {"name": "special-defense", "value": 85},
+      {"name": "speed", "value": 100}
+    ]
+  },
+  {
+    "id": 7,
+    "name": "squirtle",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+    "types": ["water"],
+    "abilities": ["torrent", "rain-dish"],
+    "stats": [
+      {"name": "hp", "value": 44},
+      {"name": "attack", "value": 48},
+      {"name": "defense", "value": 65},
+      {"name": "special-attack", "value": 50},
+      {"name": "special-defense", "value": 64},
+      {"name": "speed", "value": 43}
+    ]
+  },
+  {
+    "id": 8,
+    "name": "wartortle",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+    "types": ["water"],
+    "abilities": ["torrent", "rain-dish"],
+    "stats": [
+      {"name": "hp", "value": 59},
+      {"name": "attack", "value": 63},
+      {"name": "defense", "value": 80},
+      {"name": "special-attack", "value": 65},
+      {"name": "special-defense", "value": 80},
+      {"name": "speed", "value": 58}
+    ]
+  },
+  {
+    "id": 9,
+    "name": "blastoise",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+    "types": ["water"],
+    "abilities": ["torrent", "rain-dish"],
+    "stats": [
+      {"name": "hp", "value": 79},
+      {"name": "attack", "value": 83},
+      {"name": "defense", "value": 100},
+      {"name": "special-attack", "value": 85},
+      {"name": "special-defense", "value": 105},
+      {"name": "speed", "value": 78}
+    ]
+  },
+  {
+    "id": 10,
+    "name": "caterpie",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+    "types": ["bug"],
+    "abilities": ["shield-dust", "run-away"],
+    "stats": [
+      {"name": "hp", "value": 45},
+      {"name": "attack", "value": 30},
+      {"name": "defense", "value": 35},
+      {"name": "special-attack", "value": 20},
+      {"name": "special-defense", "value": 20},
+      {"name": "speed", "value": 45}
+    ]
+  }
+];

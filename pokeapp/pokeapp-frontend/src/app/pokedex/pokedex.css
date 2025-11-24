@@ -1,0 +1,19 @@
+.pokedex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.pokemon-card {
+  text-align: center;
+  cursor: pointer;
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  background: #e0e0e0;
+}

@@ -1,6 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Injectable, signal, inject } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Pokemon } from './models/pokemon.model';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-pokeapp-service',
@@ -15,16 +17,41 @@ import { Observable } from 'rxjs';
 
 export class PokeappService {
 
-  private apiUrl = 'https://pokeapi.co/api/v2/pokemon';
+  private apiUrl = 'https://pokeapi.co/api/v2';
+  pokemons = signal<any[]>([]);
+  loaded = signal(false);
 
   constructor(private http: HttpClient) {}
 
-  getPokemons(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  loadallPokemons(): void {
+    if (this.loaded()) return;
+
+    this.http.get<{ results: Pokemon[] }>(`${this.apiUrl}/pokemon?limit=151`)
+      .subscribe(data => {
+        // 1️⃣ preparamos las llamadas a detalle
+        const calls = data.results.map((p, i) =>
+          this.http.get(`${this.apiUrl}/pokemon/${i + 1}`)
+        );
+
+        // 2️⃣ ejecutamos todas las llamadas en paralelo
+        forkJoin(calls).subscribe(detailsArray => {
+          const all = detailsArray.map((details: any, i) => ({
+            id: i + 1,
+            name: details.name,
+            sprite: details.sprites.front_default,
+            types: details.types.map((t: any) => t.type.name),
+            abilities: details.abilities.map((a: any) => a.ability.name),
+            stats: details.stats.map((s: any) => ({ name: s.stat.name, value: s.base_stat }))
+          }));
+          this.pokemons.set(all);
+          this.loaded.set(true);
+        });
+      });
   }
 
-  getPokemon(id: number | string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  getPokemonById(id: number) {
+    return this.pokemons().find(p => p.id === id);
   }
 
 }
+

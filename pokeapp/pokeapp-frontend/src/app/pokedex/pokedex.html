@@ -1,1 +1,9 @@
-<p>pokedex works!</p>
+<h1>Pokedex</h1>
+
+<div *ngIf="loading">Cargando...</div>
+
+<div class="pokedex-grid" *ngIf="!loading">
+  <div class="pokemon-card" *ngFor="let p of pokemons; let i = index">
+    <p>{{ p.name | titlecase }}</p>
+  </div>
+</div>

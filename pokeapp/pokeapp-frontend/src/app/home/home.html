@@ -25,9 +25,9 @@
 
             <h3>Opcions a Escollir</h3>
             <div class="buttons">
-                <a href="/pokedex" id="btnPokedex" class="btn btn-red">📘 Obrir Pokédex</a>
-                <a href="/pokedle" id="btnPokedle" class="btn btn-red">🎯 Jugar a Pokedle</a>
-                <a href="/teams" id="btnTeams" class="btn btn-red">👥 Veure Teams</a>
+                <button (click)="goPokedex('/pokedex')" id="btnPokedex" class="btn btn-red">📘 Obrir Pokédex</button>
+                <button (click)="goPokedle('/pokedle')" id="btnPokedle" class="btn btn-red">🎯 Jugar a Pokedle</button>
+                <button (click)="goTeams('/teams')" id="btnTeams" class="btn btn-red">👥 Veure Teams</button>
             </div>
         </section>
     </main>

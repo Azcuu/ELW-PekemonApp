@@ -12,13 +12,8 @@ export const routes: Routes = [
     title: 'Pokédex'
   },
   {
-    path: 'pokedle',
-    loadComponent: () => import('./pokedle/pokedle').then(m => m.Pokedle),
-    title: 'Pokedle'
+    path: 'pokedex/:id',
+    loadComponent: () => import('./pokemon-details/pokemon-details').then(m => m.PokemonDetails),
+    title: 'Detalles Pokémon'
   },
-  {
-    path: 'teams',
-    loadComponent: () => import('./teams/teams').then(m => m.Teams),
-    title: 'Teams'
-  }
 ];

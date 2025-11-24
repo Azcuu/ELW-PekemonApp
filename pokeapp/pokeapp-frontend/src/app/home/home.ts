@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,17 +7,16 @@ import { Router } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home {
-  constructor(private router: Router) { }
 
-  goPokedex() {
-    this.router.navigate(['/pokedex']); // cambia a la ruta real de la Pokédex
+  goPokedex(url: string) {
+    window.location.href = url;
   }
 
-  goPokedle() {
-    this.router.navigate(['/pokedle']); // cambia a la ruta real de Pokedle
+  goPokedle(url: string) {
+    window.location.href = url;
   }
 
-  goTeams() {
-    this.router.navigate(['/teams']); // cambia a la ruta real de Teams
+  goTeams(url: string) {
+    window.location.href = url;
   }
 }
